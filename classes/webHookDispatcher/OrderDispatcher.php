@@ -72,7 +72,7 @@ class OrderDispatcher implements Dispatcher
      *
      * @param string $orderId paypal order id
      *
-     * @return bool|int
+     * @return int
      */
     private function getPrestashopOrderId($orderId)
     {

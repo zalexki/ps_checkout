@@ -221,7 +221,7 @@ class ValidateOrder
      *
      * @param string $paymentMethod can be 'paypal' or 'card'
      *
-     * @return int|bool id state
+     * @return int id state
      */
     private function getPendingStatusId($paymentMethod)
     {
