@@ -100,6 +100,10 @@ class ps_checkoutDispatchWebHookModuleFrontController extends ModuleFrontControl
                 throw new UnauthorizedException('Invalid PSL signature');
             }
 
+            if (false === $this->checkMerchantID($bodyValues)) {
+                throw new UnauthorizedException('Invalid Merchant ID');
+            }
+
             $this->setAtributesBodyValues($bodyValues);
 
             // Check if have execution permissions
@@ -126,6 +130,26 @@ class ps_checkoutDispatchWebHookModuleFrontController extends ModuleFrontControl
     {
         $context = \Context::getContext();
         $response = (new Webhook($context->link))->getShopSignature($bodyValues);
+
+        // data return false if no error
+        if (200 === $response['httpCode'] && 'VERIFIED' === $response['body']['message']) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if the Webhook contains the proper merchantId
+     *
+     * @param array $bodyValues
+     *
+     * @return bool
+     */
+    private function checkMerchantID(array $bodyValues)
+    {
+        $context = \Context::getContext();
+        $response = (new Webhook($context->link))->getShopMerchantID($bodyValues);
 
         // data return false if no error
         if (200 === $response['httpCode'] && 'VERIFIED' === $response['body']['message']) {

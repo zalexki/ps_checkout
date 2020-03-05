@@ -42,4 +42,21 @@ class Webhook extends PaymentClient
             'json' => $payload,
         ]);
     }
+
+    /**
+     * Tells if the webhook contains the proper MerchantId
+     *
+     * @param array $payload
+     *
+     * @return array
+     */
+    public function getShopMerchantID(array $payload)
+    {
+        // TODO : update this with proper merchant ID route check ?
+        $this->setRoute('/payments/shop/verify_webhook_signature');
+
+        return $this->post([
+            'json' => $payload,
+        ]);
+    }
 }
