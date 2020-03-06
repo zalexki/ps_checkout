@@ -545,7 +545,7 @@ class Ps_checkout extends PaymentModule
 
     /**
      * Tells if we are in the Payment step from the order tunnel.
-     * We use the ReflectionObject because it only exists from Prestashop 1.7.7
+     * We use the ReflectionObject because it only exists from Prestashop 1.7.6
      *
      * @return bool
      */
@@ -565,7 +565,7 @@ class Ps_checkout extends PaymentModule
 
     /**
      * Get all existing Payment Steps from front office.
-     * Use ReflectionObject before Prestashop 1.7.7
+     * Use ReflectionObject before Prestashop 1.7.6
      * From Prestashop 1.7.7 object checkoutProcess is now public
      *
      * @return array
