@@ -44,7 +44,7 @@ class OrderDispatcher implements Dispatcher
     {
         $psOrderId = $this->getPrestashopOrderId($payload['orderId']);
 
-        if (false === $psOrderId) {
+        if (0 >= $psOrderId) {
             return false;
         }
 

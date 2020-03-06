@@ -188,7 +188,7 @@ class ValidateOrder
      * @param string $status
      * @param string $paymentMethod can be 'paypal' or 'card'
      *
-     * @return string|bool order state id to set to the order depending on the status return by paypal
+     * @return int order state id to set to the order depending on the status return by paypal
      */
     private function setOrderState($orderId, $status, $paymentMethod)
     {

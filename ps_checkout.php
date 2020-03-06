@@ -156,8 +156,6 @@ class Ps_checkout extends PaymentModule
             return $this->registerHook(self::HOOK_LIST_16) &&
                 $this->updatePosition(\Hook::getIdByName('payment'), false, 1);
         }
-
-        return true;
     }
 
     /**
@@ -577,7 +575,10 @@ class Ps_checkout extends PaymentModule
         $isPrestashop177 = version_compare(_PS_VERSION_, '1.7.7.0', '>=');
 
         if (true === $isPrestashop177) {
-            return $this->context->controller->getCheckoutProcess()->getSteps();
+            /** @var \OrderController $controller */
+            $controller = $this->context->controller;
+
+            return $controller->getCheckoutProcess()->getSteps();
         }
 
         /* Reflect checkoutProcess object */
