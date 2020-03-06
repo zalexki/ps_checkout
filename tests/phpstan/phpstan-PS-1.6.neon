@@ -9,8 +9,8 @@ parameters:
 		- ../../ps_checkout.php
 	ignoreErrors:
     - '#Method LinkCore::getAdminLink\(\) invoked with 4 parameters, 1-2 required.#'
-    - '#Call to method assign() on an unknown class Smarty.#'
+    - '#Call to method assign\(\) on an unknown class Smarty.#'
     - '#Instantiated class PrestaShop\PrestaShop\Adapter\Cart\CartPresenter not found#'
-    - '#Call to method present() on an unknown class PrestaShop\PrestaShop\Adapter\Cart\CartPresenter.#'
+    - '#Call to method present\(\) on an unknown class PrestaShop\PrestaShop\Adapter\Cart\CartPresenter.#'
 
 	level: 5
