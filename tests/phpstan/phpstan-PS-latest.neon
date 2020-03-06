@@ -18,5 +18,6 @@ parameters:
 		- '#Property TabCore::\$name \(string\) does not accept array.#'
 		- '#Parameter \#4 \$ssl of method LinkCore::getModuleLink\(\) expects null, true given.#'
 		- '#Property CustomerCore::\$passwd \(int\) does not accept bool\|string.#'
+    - '#Call to an undefined method OrderController::getCheckoutProcess\(\).#'
 
 	level: 5
