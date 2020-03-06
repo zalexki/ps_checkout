@@ -275,7 +275,7 @@ class Ps_checkout extends PaymentModule
      */
     public function hookDisplayPersonalInformationTop()
     {
-        if (!version_compare(_PS_VERSION_, '1.7.6.0', '>=')) {
+        if (version_compare(_PS_VERSION_, '1.7.6.0', '<')) {
             return false;
         }
 

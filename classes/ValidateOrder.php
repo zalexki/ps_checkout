@@ -115,6 +115,7 @@ class ValidateOrder
             $payload['paymentMethod']
         );
 
+        // TODO: fix this for 1.6 ?
         if ($orderState === _PS_OS_PAYMENT_) {
             $this->setTransactionId($module->currentOrderReference, $response['body']['id']);
         }
